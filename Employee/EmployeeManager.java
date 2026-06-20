@@ -26,6 +26,7 @@ public class EmployeeManager {
             double salary = employee.calculateSalary();
 
             sb.append("Name: ").append(employee.getEmployeeName())
+                    .append(" | Department: ").append(employee.getDepartment())
                     .append(" | Salary: ").append(String.format("%.2f", salary));
 
             if (employee instanceof EligibleBonus empBonus) {
