@@ -1,6 +1,6 @@
 package Employee;
 
-public class FullTimeEmployee extends Employee {
+public class FullTimeEmployee extends Employee implements EligibleBonus{
 
     private double monthlySalary;
 
@@ -12,5 +12,10 @@ public class FullTimeEmployee extends Employee {
     @Override
     double calculateSalary() {
         return monthlySalary;
+    }
+
+    @Override
+    public double bonusCalculation() {
+        return monthlySalary*0.25;
     }
 }

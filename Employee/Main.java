@@ -10,6 +10,6 @@ public class Main {
         manager.addEmployee(new PartTimeEmployee("1002","Siti",5,8.80));
         manager.addEmployee(new ContractEmployee("1003","Calvin",4,1500));
 
-        System.out.println("List of employee\n" + manager.showEmployees());
+        System.out.println(manager.showEmployees());
     }
 }

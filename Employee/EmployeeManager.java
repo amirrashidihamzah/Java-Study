@@ -15,11 +15,29 @@ public class EmployeeManager {
         return employees;
     }
 
-    public String showEmployees(){
+    public String showEmployees() {
+
         StringBuilder sb = new StringBuilder();
-        for(Employee employee:employees){
-            sb.append("Name:").append(employee.getEmployeeName());
-            sb.append(" Salary: ").append(employee.calculateSalary()).append("\n");
+
+        sb.append("List of employee\n");
+
+        for (Employee employee : employees) {
+
+            double salary = employee.calculateSalary();
+
+            sb.append("Name: ").append(employee.getEmployeeName())
+                    .append(" | Salary: ").append(String.format("%.2f", salary));
+
+            if (employee instanceof EligibleBonus empBonus) {
+
+                double bonus = empBonus.bonusCalculation();
+
+                sb.append(" | Bonus: ").append(String.format("%.2f", bonus))
+                        .append(" | Total Salary: ")
+                        .append(String.format("%.2f", salary + bonus));
+            }
+
+            sb.append("\n"); // IMPORTANT: new line for every employee
         }
         return sb.toString();
     }
